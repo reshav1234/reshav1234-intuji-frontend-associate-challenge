@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <title>Financial Dashboard</title>
+    <link rel="stylesheet" href="dashboard.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <div class="logo">
+                <!-- Logo placeholder -->
+            </div>
+            
+            <div class="nav-item active">
+                <i></i>
+                <span>Dashboard</span>
+            </div>
+            
+            <div class="nav-item">
+          <i class="fa-solid fa-calendar"></i>
+                <span>Schedule</span>
+            </div>
+            
+            <div class="nav-item">
+                <i class="fa-solid fa-message"></i>
+                <span>Message</span>
+            </div>
+            
+            <div class="nav-item">
+                <i class="fa-solid fa-chart-simple"></i>
+                <span>Analytics</span>
+            </div>
+            
+            <div class="nav-item">
+                <i class="fa-solid fa-people-group"></i>
+                <span>Team</span>
+            </div>
+            
+            <div class="sidebar-divider"></div>
+            
+            <div class="nav-item">
+                <i class="fa-solid fa-user"></i>
+                <span>Profile</span>
+            </div>
+            
+            <div class="nav-item">
+                <i class="fa-solid fa-gear"></i>
+                <span>Settings</span>
+            </div>
+            
+            <div class="sidebar-divider"></div>
+            
+            <div class="nav-item">
+                <i class="fa-solid fa-circle-info"></i>
+                <span>Help</span>
+            </div>
+            
+            <div class="nav-item">
+                <i class="fa-solid fa-arrow-right-from-bracket"></i>
+                <span>Logout</span>
+            </div>
+        </div>
+        
+        <!-- Main Content -->
+        <div class="main">
+            <div class="header">
+                <div class="search-bar">
+                    <i>🔍</i>
+                    <input type="text" placeholder="Search here...">
+                </div>
+                
+                <div class="user-menu">
+                    <div class="icon-button">🔔</div>
+                    <div class="icon-button">💬</div>
+                    <div class="user-profile">
+                        <div class="user-avatar">📷</div>
+                        <span>Mirie Kiritani</span>
+                    </div>
+                </div>
+            </div>
+            
+            <h2 class="section-title">Overview</h2>
+            
+            <div class="cards-grid">
+                <div class="card card-blue">
+                    <div class="card-header">
+                        <div class="card-icon">💰</div>
+                        <div class="status up">
+                            <span>15%</span>
+                            <span>compared with last month</span>
+                        </div>
+                    </div>
+                    <div class="card-title">Your Balance</div>
+                    <div class="card-value">$28,891.138</div>
+                    <div class="card-footer">
+                        <div></div>
+                        <div>→</div>
+                    </div>
+                </div>
+                
+                <div class="card card-white">
+                    <div class="card-header">
+                        <div class="card-icon">💹</div>
+                        <div class="status down">
+                            <span>0.5%</span>
+                            <span>compared with last month</span>
+                        </div>
+                    </div>
+                    <div class="card-title">Saving</div>
+                    <div class="card-value">$1,050.44</div>
+                    <div class="card-footer">
+                        <div></div>
+                        <div>→</div>
+                    </div>
+                </div>
+                
+                <div class="card card-white">
+                    <div class="card-header">
+                        <div class="card-icon">💸</div>
+                        <div class="status up">
+                            <span>2%</span>
+                            <span>compared with last month</span>
+                        </div>
+                    </div>
+                    <div class="card-title">Expenses</div>
+                    <div class="card-value">$200.31</div>
+                    <div class="card-footer">
+                        <div></div>
+                        <div>→</div>
+                    </div>
+                </div>
+                
+                <div class="card card-white">
+                    <div class="card-header">
+                        <div class="card-icon">💵</div>
+                        <div class="status up">
+                            <span>8%</span>
+                            <span>compared with last month</span>
+                        </div>
+                    </div>
+                    <div class="card-title">Incomes</div>
+                    <div class="card-value">$21,121.0</div>
+                    <div class="card-footer">
+                        <div></div>
+                        <div>→</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="analytics-header">
+                <h2 class="section-title">Analytics</h2>
+                <div class="analytics-filters">
+                    <div class="filter-item">
+                        <div class="dot purple"></div>
+                        <span>Label 1</span>
+                    </div>
+                    <div class="filter-item">
+                        <div class="dot orange"></div>
+                        <span>Label 1</span>
+                    </div>
+                    <div class="dropdown-button">
+                        <span id="periodSelector">Weekly</span>
+                        <span>▼</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="chart-container">
+                <canvas id="analyticsChart"></canvas>
+            </div>
+        </div>
+        
+        <!-- Right Sidebar -->
+        <div class="right-sidebar">
+            <div class="right-header">
+                <h2 class="section-title">Saving Plan</h2>
+                <a href="#" class="see-all">See All</a>
+            </div>
+            
+            <div class="savings-item">
+                <div class="savings-header">
+                    <div class="savings-title">Bali Vacation</div>
+                    <div class="savings-target">Target: August 25 2022</div>
+                </div>
+                <div class="savings-value">
+                    $1950.21
+                    <span class="savings-total">/$4000</span>
+                </div>
+                <div class="progress-bar">
+                    <div class="progress-fill blue" style="width: 48%;"></div>
+                </div>
+                <div class="progress-percentage percentage-blue">48%</div>
+            </div>
+            
+            <div class="savings-item">
+                <div class="savings-header">
+                    <div class="savings-title">New Gadget</div>
+                    <div class="savings-target">Target: August 25 2022</div>
+                </div>
+                <div class="savings-value">
+                    $790.21
+                    <span class="savings-total">/$1000</span>
+                </div>
+                <div class="progress-bar">
+                    <div class="progress-fill orange" style="width: 79%;"></div>
+                </div>
+                <div class="progress-percentage percentage-orange">79%</div>
+            </div>
+            
+            <div class="savings-item">
+                <div class="savings-header">
+                    <div class="savings-title">Charity</div>
+                    <div class="savings-target">Target: August 25 2022</div>
+                </div>
+                <div class="savings-value">
+                    $32.11
+                    <span class="savings-total">/$100</span>
+                </div>
+                <div class="progress-bar">
+                    <div class="progress-fill green" style="width: 32%;"></div>
+                </div>
+                <div class="progress-percentage percentage-green">32%</div>
+            </div>
+            
+            <div class="right-header">
+                <h2 class="section-title">Recent Transaction</h2>
+                <a href="#" class="see-all">See All</a>
+            </div>
+            
+            <div class="transaction-list">
+                <div class="transaction-item">
+                    <div class="transaction-icon">📊</div>
+                    <div class="transaction-details">
+                        <div class="transaction-name">Figma</div>
+                        <div class="transaction-date">August 20, 2022</div>
+                    </div>
+                    <div>
+                        <div class="transaction-amount">$100</div>
+                        <div class="transaction-status">Completed</div>
+                    </div>
+                </div>
+                
+                <div class="transaction-item">
+                    <div class="transaction-icon">📺</div>
+                    <div class="transaction-details">
+                        <div class="transaction-name">Youtube</div>
+                        <div class="transaction-date">August 20, 2022</div>
+                    </div>
+                    <div>
+                        <div class="transaction-amount">$120</div>
+                        <div class="transaction-status">Completed</div>
+                    </div>
+                </div>
+                
+                <div class="transaction-item">
+                    <div class="transaction-icon">🎵</div>
+                    <div class="transaction-details">
+                        <div class="transaction-name">Spotify</div>
+                        <div class="transaction-date">August 20, 2022</div>
+                    </div>
+                    <div>
+                        <div class="transaction-amount">$15</div>
+                        <div class="transaction-status">Completed</div>
+                    </div>
+                </div>
+                
+                <div class="transaction-item">
+                    <div class="transaction-icon">🖼️</div>
+                    <div class="transaction-details">
+                        <div class="transaction-name">Freepik</div>
+                        <div class="transaction-date">August 20, 2022</div>
+                    </div>
+                    <div>
+                        <div class="transaction-amount">$300</div>
+                        <div class="transaction-status">Completed</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Include Chart.js from CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
